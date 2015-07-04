@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shadow Writing Scorer</title>
+<style>
+body {
+    font-family: monospace;
+}
+
+#toscore {
+  width: 100%;
+  height: 10em;
+  font-family: monospace;
+}
+
+#score-button {
+  margin: 0.5em;
+}
+
+.score-table {
+}
+
+.score-item {
+  display: flex;
+  flex-direction: row;
+  font-family: monospace;
+}
+
+.score-item .label {
+  flex-basis: 18em;
+}
+
+.score-block-item {
+}
+
+.score-block {
+  padding-left: 1em;
+}
+
+.unresolved {
+  display: none;
+}
+
+.matters {
+  font-weight: bold;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</script>
+<script src="scorer.js"></script>
+</head>
+<body>
+ <textarea id="toscore" placeholder="Paste your text here!"></textarea>
+ <input type="button" id="score-button" value="Score!">
+ <div class="score-table unresolved">
+   <div class="score-item matters"><span class="label">Precision:</span><span class="score" id="precision"></span></div>
+   <div class="score-item matters"><span class="label">Word Count:</span><span class="score" id="word-count"></span></div>
+   <div class="score-item"><span class="label">Sentence Count:</span><span class="score" id="sentence-count"></span></div>
+   <div class="score-item"><span class="label">Sentence Length:</span><span class="score" id="med-sentence-length"></span></div>
+   <div class="score-item"><span class="label">Slash Count:</span><span class="score" id="slash-count"></span></div>
+   <div class="score-item"><span class="label">Slashed Sentence Length:</span><span class="score" id="med-slashed-sentence-length"></span></div>
+   <div class="score-item"><span class="label">Before-Slash Length:</span><span class="score" id="med-before-slash-length"></span></div>
+   <div class="score-block-item">Foreign Words(<span id="foreign-count"></span> = <span id="foreign-ratio"></span>):</div>
+   <div class="score-block" id="foreign-words">&nbsp;</div>
+   <input id="select-button" type="button" value="Select The Results" />
+</div>
+</body>
+</html>
